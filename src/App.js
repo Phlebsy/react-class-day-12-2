@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import AddProductForm from './components/products/AddProductForm';
 
 class App extends Component {
   render() {
@@ -18,6 +19,15 @@ class App extends Component {
                 </p>
               </Route>
               <Route path="/cart" />
+              <Route
+                path="/addProduct"
+                render={props => (
+                  <AddProductForm
+                    {...props}
+                    dispatch={this.props.context.dispatch}
+                  />
+                )}
+              />
             </Switch>
           </div>
         </div>

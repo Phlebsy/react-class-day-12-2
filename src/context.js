@@ -6,6 +6,11 @@ const Context = React.createContext();
 // Reducers
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'ADD_PRODUCT':
+      return {
+        ...state,
+        productList: [action.payload, ...state.productList]
+      };
     default:
       return state;
   }
