@@ -18,6 +18,7 @@ class App extends Component {
                 <ProductList
                   productList={this.props.context.productList}
                   dispatch={this.props.context.dispatch}
+                  cart={this.props.context.cartItems}
                 />
               </Route>
               <Route

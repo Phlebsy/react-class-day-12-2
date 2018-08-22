@@ -18,7 +18,8 @@ export default class CartItem extends Component {
             onClick={removeFromCart.bind(
               this,
               this.props.product,
-              this.props.dispatch
+              this.props.dispatch,
+              this.props.cart
             )}
           >
             Remove

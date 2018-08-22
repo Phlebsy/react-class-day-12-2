@@ -6,7 +6,12 @@ export default class Cart extends Component {
     const { cartItems, dispatch } = this.props;
 
     const cartList = cartItems.map((item, index) => (
-      <CartItem product={item} key={`item-${index}`} dispatch={dispatch} />
+      <CartItem
+        product={item}
+        key={`item-${index}`}
+        dispatch={dispatch}
+        cart={cartItems}
+      />
     ));
 
     return <div>{cartList}</div>;

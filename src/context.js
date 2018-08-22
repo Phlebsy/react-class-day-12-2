@@ -39,12 +39,18 @@ export class Provider extends React.Component {
   };
 
   componentDidMount() {
+    let storedCart = [];
+    localStorage.getItem('cart')
+      ? (storedCart = JSON.parse(localStorage.getItem('cart')))
+      : localStorage.setItem('cart', JSON.stringify([]));
+
     this.setState({
       productList: [
         { name: 'Basketball', description: 'Bouncy', price: 15.0 },
         { name: 'Laptop', description: 'Computery', price: 750.0 },
         { name: 'Table', description: 'Ikea approved', price: 45.0 }
-      ]
+      ],
+      cartItems: storedCart
     });
   }
 

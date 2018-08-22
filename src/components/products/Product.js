@@ -16,7 +16,8 @@ export default class Product extends Component {
             onClick={addToCart.bind(
               this,
               this.props.product,
-              this.props.dispatch
+              this.props.dispatch,
+              this.props.cart
             )}
           >
             Add to Cart
