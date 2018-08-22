@@ -12,7 +12,11 @@ export default class AddProductForm extends Component {
 
   addProduct = e => {
     e.preventDefault();
-    const newProduct = this.state;
+    const newProduct = {
+      name: this.state.name,
+      description: this.state.description,
+      price: Number(this.state.price)
+    };
 
     addProduct(newProduct, this.props.dispatch);
     this.props.history.push('/');

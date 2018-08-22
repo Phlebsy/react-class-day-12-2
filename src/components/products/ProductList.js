@@ -3,10 +3,10 @@ import Product from './Product';
 
 export default class ProductList extends Component {
   render() {
-    const { productList } = this.props;
+    const { productList, dispatch } = this.props;
 
     const productElements = productList.map((product, index) => (
-      <Product key={`product-${index}`} product={product} />
+      <Product key={`product-${index}`} product={product} dispatch={dispatch} />
     ));
 
     const divStyle = {

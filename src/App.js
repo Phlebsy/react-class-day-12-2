@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import AddProductForm from './components/products/AddProductForm';
 import ProductList from './components/products/ProductList';
+import Cart from './components/cart/Cart';
 
 class App extends Component {
   render() {
@@ -14,9 +15,20 @@ class App extends Component {
           <div className="container" style={{ marginTop: '80px' }}>
             <Switch>
               <Route exact path="/">
-                <ProductList productList={this.props.context.productList} />
+                <ProductList
+                  productList={this.props.context.productList}
+                  dispatch={this.props.context.dispatch}
+                />
               </Route>
-              <Route path="/cart" />
+              <Route
+                path="/cart"
+                render={props => (
+                  <Cart
+                    cartItems={this.props.context.cartItems}
+                    dispatch={this.props.context.dispatch}
+                  />
+                )}
+              />
               <Route
                 path="/addProduct"
                 render={props => (
