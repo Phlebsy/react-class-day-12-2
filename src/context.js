@@ -25,7 +25,13 @@ export class Provider extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({ mounted: true });
+    this.setState({
+      productList: [
+        { name: 'Basketball', description: 'Bouncy', price: 15.0 },
+        { name: 'Laptop', description: 'Computery', price: 750.0 },
+        { name: 'Table', description: 'Ikea approved', price: 45.0 }
+      ]
+    });
   }
 
   render() {

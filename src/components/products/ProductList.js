@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
+import Product from './Product';
 
 export default class ProductList extends Component {
   render() {
-    return <div>1</div>;
+    const { productList } = this.props;
+
+    const productElements = productList.map((product, index) => (
+      <Product key={`product-${index}`} product={product} />
+    ));
+
+    const divStyle = {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr 1fr',
+      gridGap: '5px'
+    };
+
+    return <div style={divStyle}>{productElements}</div>;
   }
 }
